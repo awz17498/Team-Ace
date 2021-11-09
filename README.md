@@ -1,4 +1,5 @@
 # Team : Ace
+------------
 이름 | 역할
 --- | --- |
 김동현 | Leader |
@@ -12,6 +13,7 @@
 김하민 | Assistance |
 
 # Project : 오파고
+------------
 #### 기획 내용
 오목 AI게임 오픈소스를 활용하여 내부 알고리즘을 이해하고 본 강의에서 배운 내용을 접목 시켜 프로그래밍에 대한 폭넓은 이해와 팀워크를 배움에 목적을 둔 프로젝트 입니다.
 * 적용 기술
@@ -20,6 +22,7 @@
   * AI
 
 # 송환욱
+------------
 #### ※오목1 예제 실험
 1. 최초 실행시 오류 : import numpy 에러(numpy package가 설치되어 있지 않기 때문)
 2. 터미널에서 numpy Package 존재여부 체크
@@ -35,23 +38,31 @@ pip install numpy
 p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결
 
 #### ※오목2 예제 실험
+------------
 1. pygame 설치
 ```python
 pip install pygame
 ```
+2. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
+
 2. pyinstaller 설치(https://shgl.tistory.com/21)
 ```python
 pip install pyinstaller
 ```
-3. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
-
-
-
-앞으로 해야할 일
+#### ※py(스크립트)파일을 exe(실행파일)로 변환하는 작업
+[https://kkamikoon.tistory.com/129]
+콘솔창이 출력되지 않게 하려면 아래와 같이 명령어에 '-w' 또는 '--windowed'를 추가해줍니다.
+```ps
+pyinstaller -w 
+```
+#### 앞으로 해야할 일
 1. pygame 모듈에 대한 공부
-2. py(스크립트)파일을 exe(실행파일)로 변환하는 작업
 [https://kkamikoon.tistory.com/129]
 
+
+
+
+# 오목 예제 2 리드미
 ------------
 # AI-Omok Mini Project
 ------------
@@ -97,4 +108,3 @@ pip install pyinstaller
 ### 개선할 점
 ##### 1. 재시작 전 카운트 다운할 때, 마우스 이벤트 오류 수정
 ##### 2. MinMax 알고리즘을 사용하여 더 많은 수 예측
-----------
