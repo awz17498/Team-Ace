@@ -20,19 +20,19 @@
   * AI
 
 # 송환욱
-~~#### ※오목1 예제 실험~~
-1. 최초 실행시 오류 : import numpy 에러(numpy package가 설치되어 있지 않기 때문)~~
-2. 터미널에서 numpy Package 존재여부 체크~~
+#### ~~※오목1 예제 실험~~
+~~1. 최초 실행시 오류 : import numpy 에러(numpy package가 설치되어 있지 않기 때문)~~
+~~2. 터미널에서 numpy Package 존재여부 체크~~
 ```python
 pip show numpy
 ```
-3. numpy Package 설치
+~~3. numpy Package 설치~~
 ```python
 pip install numpy
 ```
-4. 실행 결과 : **GUI가 아닌** 응용 프로그램 내에서 실행됐음
+~~4. 실행 결과 : **GUI가 아닌** 응용 프로그램 내에서 실행됐음~~
 
-p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결
+~~p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결~~
 
 #### ※오목2 예제 실험
 1. pygame 설치
