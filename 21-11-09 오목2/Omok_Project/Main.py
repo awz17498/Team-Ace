@@ -26,8 +26,8 @@ class Main(object):
 
         pygame.init()
 
-        screen = pygame.display.set_mode((800, 440))
-        pygame.display.set_caption('오목')
+        screen = pygame.display.set_mode((1000, 440))
+        pygame.display.set_caption('Ace 오목')
 
         rand_x = random.randrange(8,12)
         rand_y = random.randrange(8,12)
