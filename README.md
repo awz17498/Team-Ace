@@ -1,6 +1,6 @@
 ## Team-Ace
 
-+Leader : 김동현
+*Leader : 김동현
 
 #・Programming : 
 서숭용(DB) | 허찬(GUI) | 송환욱(AI)
