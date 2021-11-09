@@ -42,8 +42,8 @@ pip install pygame
 2. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
 
 
-#### ※py(스크립트)파일을 exe(실행파일)로 변환하는 작업
-* pyinstaller 설치(https://shgl.tistory.com/21)
+#### ※py(스크립트)파일을 exe(실행파일)로 변환하는 작업[https://shgl.tistory.com/21]
+* pyinstaller 설치
 ```ps
 pip install pyinstaller
 ```
@@ -56,9 +56,8 @@ pyinstaller --onefile 파일명.py
 pyinstaller -w 파일명.py
 ```
 #### 앞으로 해야할 일
-* pygame 모듈에 대한 공부
-[https://kkamikoon.tistory.com/129]
-
+* pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
+* pyinstaller 응용[https://journeytosth.tistory.com/6]
 
 
 ------------
