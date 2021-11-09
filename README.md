@@ -50,6 +50,7 @@ pip install pyinstaller
 * .py를 .exe로 변환하기
 ```ps
 pyinstaller --onefile 파일명.py
+```
 * 콘솔창이 출력되지 않게 하려면 아래와 같이 명령어에 '-w' 또는 '--windowed'를 추가해줍니다.
 ```ps
 pyinstaller -w 파일명.py
