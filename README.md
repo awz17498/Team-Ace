@@ -30,7 +30,7 @@ pip show numpy
 ```python
 pip install numpy
 ```
-4. 실행 결과 : GUI가 아닌 응용 프로그램 내에서 실행됐음
+4. 실행 결과 : **GUI가 아닌** 응용 프로그램 내에서 실행됐음
 
 p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결
 
