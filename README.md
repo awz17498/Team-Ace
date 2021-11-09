@@ -21,8 +21,7 @@
 
 # 송환욱
 #### ※오목1 예제 실험
-1. 최초 실행시 오류 : import numpy 에러 (현재 numpy package가 설치되어 있지 않기 때문에 에러 발생)
-1번 해결 방법 : 
+1. 최초 실행시 오류 : import numpy 에러(numpy package가 설치되어 있지 않기 때문)
 터미널에서 numpy Package 존재여부 체크
 ```python
 pip show numpy
