@@ -31,9 +31,7 @@
 > 
 > numpy Package 설치
 
-'''
-pip install numpy
-'''
+ pip install numpy
 
 > 추후 pandas, metplotlib 등 필요한 Package를
 > 'pip install 패키지명' 명령을 이용하여 설치해 사용하면 됨
