@@ -22,19 +22,15 @@
 # 송환욱
 #### ※오목1 예제 실험
 1. 최초 실행시 오류 : import numpy 에러 (현재 numpy package가 설치되어 있지 않기 때문에 에러 발생)
-> 1번 해결 방법
-> 터미널에서 numpy Package 존재여부 체크
-> 
-> '''
-> pip show numpy
-> '''
-> 
-> numpy Package 설치
+1번 해결 방법
+터미널에서 numpy Package 존재여부 체크
 
- pip install numpy
 
-> 추후 pandas, metplotlib 등 필요한 Package를
-> 'pip install 패키지명' 명령을 이용하여 설치해 사용하면 됨
+pip show numpy
+numpy Package 설치
+```python
+pip install numpy
+```
 2. 실행 결과 : GUI가 아닌 응용 프로그램 내에서 실행됐음
 
 p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결
