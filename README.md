@@ -36,12 +36,21 @@ p.s 넘파이 체크도 안된다면 파이썬 재설치하면 해결
 
 #### ※오목2 예제 실험
 1. pygame 설치
-2. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
+```python
+pip install pygame
+```
+2. pyinstaller 설치(https://shgl.tistory.com/21)
+```python
+pip install pyinstaller
+```
+3. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
+
 
 
 앞으로 해야할 일
-1. pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
-
+1. pygame 모듈에 대한 공부
+2. py(스크립트)파일을 exe(실행파일)로 변환하는 작업
+[https://kkamikoon.tistory.com/129]
 
 ------------
 # AI-Omok Mini Project
