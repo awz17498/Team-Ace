@@ -59,7 +59,7 @@ pyinstaller -w 파일명.py
 * pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
 * pyinstaller 응용[https://journeytosth.tistory.com/6]
 * 내일 할 거
- * build, dist, __pycache__ 삭제 후 나머지 넣어보기
+  * build, dist, __pycache__ 삭제 후 나머지 넣어보기
 
 
 ------------
