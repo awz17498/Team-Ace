@@ -34,7 +34,7 @@
 * 인원별 역할 재구성
 * 표준화 되는대로 개인별 브랜치 개설 후 코딩 및 공부
 * 11.10 **ace.py 파워셀로 실행시 간헐적 오류 해결**
-```ps
+```
 PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project> py main.py
 pygame 2.1.0 (SDL 2.0.16, Python 3.10.0)
 Traceback (most recent call last):
