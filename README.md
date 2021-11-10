@@ -75,8 +75,6 @@ pip install pygame
 3. 승리조건을 만족하면 승리화면으로 넘어갑니다.
 4. 승리자의 이름을 입력합니다.
 5. 승리 또는 패배하면 재시작 버튼을 통해 재시작 할 수 있습니다.
-
-### ScreenShot
 ![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
 ![승리화면](https://user-images.githubusercontent.com/89123604/141059815-5bc91cd6-1a34-4d0e-a0eb-7c8348c13a82.JPG)
 ![승리후 순위등록](https://user-images.githubusercontent.com/89123604/141059817-fbe566d5-929e-4fb2-a435-f4bd4c618e12.JPG)
