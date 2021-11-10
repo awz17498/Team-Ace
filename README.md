@@ -55,6 +55,10 @@ pyinstaller --onefile 파일명.py
 ```ps
 pyinstaller -w 파일명.py
 ```
+* 21.11.10 Test
+```ps
+pyinstaller game.py --onefile --noconsole
+```
 #### 앞으로 해야할 일
 * pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
 * pyinstaller 응용[https://journeytosth.tistory.com/6]
