@@ -10,57 +10,32 @@
 김동현 | Planning |
 강민기 | Assistance |
 김하민 | Assistance |
+유태우 | Assistance |
 
 # Project : 오파고
 #### 기획 내용
-오목 AI게임 오픈소스를 활용하여 내부 알고리즘을 이해하고 본 강의에서 배운 내용을 접목 시켜 프로그래밍에 대한 폭넓은 이해와 팀워크를 배움에 목적을 둔 프로젝트 입니다.
+오목 AI게임 오픈소스를 활용하여 내부 알고리즘을 이해하고 본 강의에서 배운 내용을 접목 시켜 
+프로그래밍에 대한 폭넓은 이해와 팀워크를 배움에 목적을 둔 프로젝트 입니다.
 * 적용 기술
   * DB
   * GUI
   * AI
-
-#### ※오목2 예제 실험
-1. pygame 설치
-```python
-pip install pygame
-```
-2. 내부 폴더에(\Omok_Project\dist\AI_오목\AI오목.exe)을 실행하면 구동됨
-
-
-#### ※py(스크립트)파일을 exe(실행파일)로 변환하는 작업[https://shgl.tistory.com/21]
-* pyinstaller 설치
-```ps
-pip install pyinstaller
-```
-* .py를 .exe로 변환하기
-```ps
-pyinstaller --onefile 파일명.py
-```
-* 콘솔창이 출력되지 않게 하려면 아래와 같이 명령어에 '-w' 또는 '--windowed'를 추가해줍니다.
-```ps
-pyinstaller -w 파일명.py
-```
-* 21.11.10 Test
-```ps
-pyinstaller game.py --onefile --noconsole
-```
+  * ALGORITHM
+  
 #### 앞으로 해야할 일
 * pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
-* pyinstaller 응용[https://journeytosth.tistory.com/6]
-* 내일 할 거
-  * build, dist, __pycache__ 삭제 후 나머지 넣어보기
 
+#### 구현하고자 하는 기능
+* 시작 버튼을 통한 게임 시작
+* 시작과 동시에 게임이 종료 될때 까지 시간 측정
+  * 최소 시간 승리 랭킹 구현
+* 졌을 경우 재도전 버튼을 통해 게임 재시작
+* 이겼을 경우 승리 화면 생성
+  * 승리 화면 이름 입력칸 생성
+  * 이름 입력시 승리한 판에 대한 승리 시간 저장
+* 저장된 기록들을 짧은 시간순으로 랭킹 표출
 
 ------------
-------------
-------------
-# 오목 예제 2 리드미 백업
-# AI-Omok Mini Project
-------------
-## Project info
-##### - 오목판의 흐름을 스스로 판단하여 두는 AI를 만드는 것이 목표입니다.
-##### - 학습이나 다음 수를 예상하는 것이 아닌 자신의 차례에서 가장 가치있는 곳에 돌을 둡니다.
-##### - 오목판의 흐름을 판단할 때, 저의 주관적인 영향이 있을 수 있습니다.
 ## Cording
 ##### - python version : 3.7
 ##### - encoding : UTF-8
@@ -75,27 +50,35 @@ pyinstaller game.py --onefile --noconsole
 ##### - 4 x 4 : 흑,백 모두 가능
 ##### - 시간제한 : 없음
 ## Start
-##### 1. 시작하면 흑(AI)이 먼저 돌을 놓습니다.
+##### 1. 시작버튼을 누르면 흑(AI)이 먼저 돌을 놓습니다.
 ##### 2. 마우스로 백(User)이 놓을 곳을 선택합니다.
-##### 3. 승리조건을 만족하면 5초 뒤 재시작합니다.
+##### 3. 승리조건을 만족하면 승리화면으로 넘어갑니다.
+##### 4. 승리자의 이름을 입력합니다.
+##### 5. 승리자의 이름을 입력을 하면 기록과 함께 순위표가 생성됩니다.
+##### 6. 승리하면 재시작 버튼을 통해 재시작을 할 수 있습니다.
+##### 7. 패배하면 재시작 버튼을 통해 재시작을 할 수 있습니다.
+
+
 
 ------------
 ## ScreenShot
+![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
+![승리화면](https://user-images.githubusercontent.com/89123604/141059815-5bc91cd6-1a34-4d0e-a0eb-7c8348c13a82.JPG)
+![승리후 순위등록](https://user-images.githubusercontent.com/89123604/141059817-fbe566d5-929e-4fb2-a435-f4bd4c618e12.JPG)
+![순위화면](https://user-images.githubusercontent.com/89123604/141059804-d1d7d10d-7787-4f23-86a3-655b66bbc059.JPG)
+
 ![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
-------------
-## Step
-##### 1. 콘솔을 목표로 기본적인 코딩
-##### 2. GUI
-##### 3. 오류 수정 및 첫 시제품 완성
-##### 4. 충분한 테스팅을 통한 코드 개선 및 수정
+
 ------------
 ## Memo
-### 어려웠던 점
+## 어려웠던 점
 ##### 1. 처음 사용해보는 Python GUI의 어려움
 ##### 2. 오목판의 흐름을 판단할 방법
 ##### - 모든 좌표의 가중치(ex : 승리조건을 만족하는 곳이면 큰 수)를 계산하여 가장 높은 가중치의 좌표를 두게함
 ![o1](https://user-images.githubusercontent.com/48282708/73593289-b8942d00-4545-11ea-886e-45d81ec643ad.png)
 ##### - 패턴을 미리 정해놓고 체크하며 가중치 계산
-### 개선할 점
+## 개선할 점
 ##### 1. 재시작 전 카운트 다운할 때, 마우스 이벤트 오류 수정
 ##### 2. MinMax 알고리즘을 사용하여 더 많은 수 예측
+##### 3. 4 x 3 or 4 x 4를 할때, 띄워진 4를 3으로 인식해서 3 x 3으로 잘못 인식함.
+##### 4. 카운트다운 할때, quit 이벤트 안먹힘
