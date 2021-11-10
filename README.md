@@ -38,6 +38,9 @@
 
 ### Install
 GUI : Pygame
+```ps
+pip install pygame
+```
 
 ### 프로그램 규칙
 시간 제한 : X<br>
