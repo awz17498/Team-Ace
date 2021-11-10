@@ -24,11 +24,11 @@
   * ALGORITHM
   
 ### 앞으로 해야할 일
-* [Git Readme 작성 요령 알아두기(markdown)](https://www.google.com/search?q=GIT+README&oq=git+RE&aqs=chrome.0.69i59j69i57j35i39j0i433i512j0i131i433i512j0i433i512l2j0i131i433i512j0i512l2.3303j0j15&sourceid=chrome&ie=UTF-8, "google")
+* [Git Readme 작성 요령 알아두기(markdown)](https://www.google.com/search?q=GIT+README&oq=git+RE&aqs=chrome.0.69i59j69i57j35i39j0i433i512j0i131i433i512j0i433i512l2j0i131i433i512j0i512l2.3303j0j15&sourceid=chrome&ie=UTF-8)
   * 발표 준비
   * 개인 메모
 * Ace.py 주석 달아가며 공부(※코드에 커서 두고 Ctrl + 마우스 우클릭시, 참조 가능)
-* GUI : Pygame 모듈[https://kkamikoon.tistory.com/129]
+* [GUI : Pygame 모듈](https://kkamikoon.tistory.com/129)
 #### 11/17(水)까지
 * 
 
