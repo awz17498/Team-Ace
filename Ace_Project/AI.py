@@ -3,7 +3,6 @@ from Offset import Offset
 class AI(Offset):
     def __init__(self, nick_name,color):
         '''
-
         :param nick_name: string
         :param color: string
         '''

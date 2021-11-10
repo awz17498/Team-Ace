@@ -1,6 +1,3 @@
-# -*- coding : utf-8 -*-
-# python version : 3.7.3
-
 from Board import Board
 from Rule import Rule
 from AI import AI
@@ -135,4 +132,3 @@ class Main(object):
 if __name__ == "__main__":
     main = Main()
     main.start()
-    
