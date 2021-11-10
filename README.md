@@ -35,14 +35,14 @@
   * 이름 입력시 승리한 판에 대한 승리 시간 저장
 * 저장된 기록들을 짧은 시간순으로 랭킹 표출
 
-------------
+
 ## Cording
 ##### - python version : 3.7
 ##### - encoding : UTF-8
 ### Install
 #### GUI : Pygame
 ##### * --pip3 install pygame
-------------
+
 ## Rule
 ##### - AI : 흑, User : 백
 ##### - 승리조건 : 5목 이상 (6목,, 7목 ... 등등)
@@ -60,7 +60,7 @@
 
 
 
-------------
+
 ## ScreenShot
 ![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
 ![승리화면](https://user-images.githubusercontent.com/89123604/141059815-5bc91cd6-1a34-4d0e-a0eb-7c8348c13a82.JPG)
@@ -69,7 +69,7 @@
 
 ![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
 
-------------
+
 ## Memo
 ## 어려웠던 점
 ##### 1. 처음 사용해보는 Python GUI의 어려움
