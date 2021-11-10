@@ -27,10 +27,23 @@
 * [Git Readme 작성 요령 알아두기(markdown)](https://www.google.com/search?q=GIT+README&oq=git+RE&aqs=chrome.0.69i59j69i57j35i39j0i433i512j0i131i433i512j0i433i512l2j0i131i433i512j0i512l2.3303j0j15&sourceid=chrome&ie=UTF-8)
   * 발표 준비
   * 개인 메모
-* Ace.py 주석 달아가며 공부(※코드에 커서 두고 Ctrl + 마우스 우클릭시, 참조 가능)
 * [GUI : Pygame 모듈](https://kkamikoon.tistory.com/129)
-#### 11/17(水)까지
+* Ace.py 주석 달아가며 공부(※코드에 커서 두고 Ctrl + 마우스 우클릭시, 참조 가능)
 * 
+#### 다음 주 수업까지 | 11/17(水)
+* 인원별 역할 재구성
+* 표준화 되는대로 개인별 브랜치 개설 후 코딩 및 공부
+* 11.10 **ace.py 파워셀로 실행시 간헐적 오류 해결**
+```ps
+PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project> py main.py
+pygame 2.1.0 (SDL 2.0.16, Python 3.10.0)
+Traceback (most recent call last):
+  File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 137, in <module>
+    main.start()
+  File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 116, in start
+    if temp_x <= 420 and temp_y <= 420:
+UnboundLocalError: local variable 'temp_x' referenced before assignment
+```
 
 
 ### 구현하고자 하는 기능
