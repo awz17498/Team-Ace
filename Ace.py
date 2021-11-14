@@ -5,11 +5,13 @@ import pygame
 from pygame.locals import *
 
 
+temp_x = 0
+temp_y = 0
 
 class Main(object):
-    
     def start(self):
         global temp_x
+        global temp_y
         '''
         오목 게임을 시작하고 진행합니다.
         한 게임이 끝나면 5초 뒤 다시 새로운 게임이 시작됩니다.
