@@ -4,28 +4,29 @@ import sys
 import pygame
 from pygame.locals import *
 
+temp_x = 0
+temp_y = 0
+
 class Main(object):
     def start(self):
-        '''
-        오목 게임을 시작하고 진행합니다.
-        한 게임이 끝나면 5초 뒤 다시 새로운 게임이 시작됩니다.
-        :return:
-        '''
+        global temp_x
+        global temp_y
+        
         board = Board()
         ai = AI('AI', '○')
         rule = Rule()
-        turn = True  # AI 차례 : False , user 차례 : True
+        turn = True # ← AI 차례 = False , user 차례 = True
         count = 1
 
         pygame.init()
 
-        screen = pygame.display.set_mode((800, 440)) # 프로그램 해상도
-        pygame.display.set_caption('ACE_오파고') # 프로그램 제목
+        screen = pygame.display.set_mode((1000, 1000)) # ← 프로그램 해상도 설정
+        pygame.display.set_caption('ACE_오파고') # ← 프로그램 제목 설정
 
         rand_x = random.randrange(8,12)
         rand_y = random.randrange(8,12)
 
-        board.put_stone(rand_y,rand_x,11)
+        board.put_stone(rand_y, rand_x, 11)
 
         rand_x = rand_x * 21 + 10
         rand_y = rand_y * 21 + 10
@@ -43,8 +44,9 @@ class Main(object):
                     pygame.quit()
                     sys.exit()
 
-                LEFT = 1  # 왼쪽 버튼에 대한 버튼 인덱스
+                LEFT = 1   # ← 왼쪽 버튼에 대한 버튼 인덱스
 
+                # 좌클릭시 놓아지는 부분(수정X)
                 if event.type == MOUSEBUTTONUP and event.button == LEFT:
                     mouse_xy = pygame.mouse.get_pos()
                     x = (mouse_xy[0] - 10) // 21
@@ -52,6 +54,7 @@ class Main(object):
                     user_select_x = y
                     user_select_y = x
 
+                # 커서가 안내하는 부분(수정X)
                 elif event.type == MOUSEMOTION:
                     mouse_xy = pygame.mouse.get_pos()
                     x = (mouse_xy[0] - 10) // 21
@@ -62,8 +65,8 @@ class Main(object):
             # 게임의 상태를 업데이트하는 부분
             if turn == False:
                 x, y = ai.select_stone(board)
-                gui_x = y*21 + 10
-                gui_y = x*21 + 10
+                gui_x = y * 21 + 10
+                gui_y = x * 21 + 10
                 board.put_stone(x, y, 11)
                 black_stones.append([gui_x,gui_y])
                 if rule.win_check(x, y, board, 11):
@@ -86,26 +89,26 @@ class Main(object):
                         else:
                             three_x_three_warning = True
 
-            # 게임의 상태를 화면에 그려주는 부분 -> 화면을 지우고, 그리고, 업데이트하는 코드가 들어감
-            screen.fill((255, 255, 255))
-            screen.blit(pygame.image.load('Image/omok_board.jpg'), (0, 0))
-            screen.blit(pygame.image.load('Image/rule.jpg'), (440, 0))
+            # 게임의 상태를 화면에 그려주는 부분 -> 화면을 지우고 업데이트하는 코드
+            screen.fill((255, 255, 255)) # ← 공백 RGB 지정
+            screen.blit(pygame.image.load('Image/omok_board.jpg'), (0, 0)) # ← (0, 0)'오목판'IMG 출력
+            screen.blit(pygame.image.load('Image/rule.jpg'), (440, 0)) # ← (440, 0)'룰'IMG 출력
 
-            for st in white_stones:
+            for st in white_stones: # ← 백돌 RGB, SIZE 지정
                 pygame.draw.circle(screen, (250, 250, 250), st, 10)
 
-            for st in black_stones:
+            for st in black_stones: # ← 흑돌 RGB, SIZE 지정
                 pygame.draw.circle(screen, (0, 0, 0), st, 10)
 
-            pygame.draw.circle(screen,(120,120,120),black_stones[-1], 10)
+            pygame.draw.circle(screen,(120,120,120),black_stones[-1], 10) # ← 마지막 흑돌 RGB, SIZE 지정
 
-            if three_x_three_warning:
-                screen.blit(pygame.image.load('Image/33.jpg'),(200, 100))
+            if three_x_three_warning: # ← 3x3 경고 트리거
+                screen.blit(pygame.image.load('Image/33.jpg'),(200, 100)) # ← '3x3 경고'IMG 출력
                 pygame.display.update()
                 time.sleep(1)
 
             if temp_x <= 420 and temp_y <= 420:
-                pygame.draw.circle(screen, (220, 220, 220),[temp_x,temp_y], 10)
+                pygame.draw.circle(screen, (220, 220, 220),[temp_x,temp_y], 10) # ← 착수 전 백돌 RGB, SIZE 지정
 
             if end_check == 'black':
                 for i in range(5, 0, -1):
@@ -152,7 +155,6 @@ class Board(object):
     def put_stone(self, x, y, color):
         '''
         오목판에 돌을 둡니다.
-
         :param x: int - 오목판 x좌표
         :param y: int - 오목판 y좌표
         :param color: int - (x,y) 좌표의 color - 10(백) or 11(흑)
@@ -179,7 +181,7 @@ class Rule(Offset):
     def stone_check(self, x, y , board):
         '''
         원래 돌이 있는 자리인지, 좌표값 밖인지 체크합니다.
-
+        
         :param x: int - 확인할 x좌표
         :param y: int - 확인할 y좌표
         :param board: Board - 오목판
