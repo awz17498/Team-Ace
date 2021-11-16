@@ -63,9 +63,10 @@
 ------------
 ## ScreenShot
 ![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
-![승리화면](https://user-images.githubusercontent.com/89123604/141059815-5bc91cd6-1a34-4d0e-a0eb-7c8348c13a82.JPG)
+![패배화면](https://user-images.githubusercontent.com/89123604/141958555-95b1ff8d-0503-43c6-bffa-8346bf29b8a6.png)
+![승리화면](https://user-images.githubusercontent.com/89123604/141958565-ef5ea7bb-06c6-434a-91f5-24f6ce423acf.png)
 ![승리후 순위등록](https://user-images.githubusercontent.com/89123604/141059817-fbe566d5-929e-4fb2-a435-f4bd4c618e12.JPG)
-![순위화면](https://user-images.githubusercontent.com/89123604/141059804-d1d7d10d-7787-4f23-86a3-655b66bbc059.JPG)
+![순위화면](https://user-images.githubusercontent.com/89123604/141958375-eef2bd46-937c-46d3-b92c-bb22485d4571.png)
 
 ![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
 
@@ -82,3 +83,5 @@
 ##### 2. MinMax 알고리즘을 사용하여 더 많은 수 예측
 ##### 3. 4 x 3 or 4 x 4를 할때, 띄워진 4를 3으로 인식해서 3 x 3으로 잘못 인식함.
 ##### 4. 카운트다운 할때, quit 이벤트 안먹힘
+##### 5. 최좌측, 최상단 유저 돌 입력 안됨
+##### 6. 파워쉘 이용시 간혈적 오류발생 (개선완료) - 게임시작시 변수인 teep_x, teep_y의 값을 초기화시키는 코딩 입력
