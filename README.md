@@ -62,17 +62,17 @@
 
 ------------
 ## ScreenShot
-------------
+### 게임화면
 ![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
-------------
+### 패배화면
 ![패배화면](https://user-images.githubusercontent.com/89123604/141958555-95b1ff8d-0503-43c6-bffa-8346bf29b8a6.png)
-------------
+
 ![승리화면](https://user-images.githubusercontent.com/89123604/141958565-ef5ea7bb-06c6-434a-91f5-24f6ce423acf.png)
-------------
+
 ![승리후 순위등록](https://user-images.githubusercontent.com/89123604/141059817-fbe566d5-929e-4fb2-a435-f4bd4c618e12.JPG)
-------------
+
 ![순위화면](https://user-images.githubusercontent.com/89123604/141958375-eef2bd46-937c-46d3-b92c-bb22485d4571.png)
-------------
+
 
 ![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
 
