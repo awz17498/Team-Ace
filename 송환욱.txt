@@ -17,6 +17,20 @@
     3-2-1. 랭킹 화면(이름 입력 시 이동)
         ??? x ??? / 1번으로 돌아가는 다시하기 버튼 50 x 50
 
+＃pygame 프로그래밍 공부
+pygame 시작하기
+https://jbmpa.com/pygame/1
+게임 루프와 프레임
+https://jbmpa.com/pygame/2
+event 처리 및 key event
+https://jbmpa.com/pygame/3
+SCREEN과 Rect의 크기와 좌표
+https://jbmpa.com/pygame/4
+Image 화면에 나타내기
+https://jbmpa.com/pygame/5
+Text를 화면에 표현하기
+https://jbmpa.com/pygame/9
+
 ＃GUI 프로그래밍 공부
  Label, Button, Entry
  https://blog.naver.com/sisosw/221408280038

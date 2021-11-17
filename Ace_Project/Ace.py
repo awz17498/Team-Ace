@@ -4,29 +4,23 @@ import sys
 import pygame
 from pygame.locals import *
 
-temp_x = 0
-temp_y = 0
-
 class Main(object):
     def start(self):
-        global temp_x
-        global temp_y
-        
+        pygame.init() # ← pygame 초기화
+        screen = pygame.display.set_mode((770, 420)) # ← 프로그램 해상도 설정
+        pygame.display.set_caption("ACE_오파고") # ← 프로그램 제목 설정
+
         board = Board()
-        ai = AI('AI', '○')
+        ai = AI("AI", "○")
         rule = Rule()
         turn = True # ← AI 차례 = False , user 차례 = True
         count = 1
+        
+        temp_x = 0
+        temp_y = 0
 
-        pygame.init()
-
-        screen = pygame.display.set_mode((770, 420)) # ← 프로그램 해상도 설정
-        pygame.display.set_caption('ACE_오파고') # ← 프로그램 제목 설정
-
-        rand_x = random.randrange(8,12)
-        rand_y = random.randrange(8,12)
-
-        board.put_stone(rand_y, rand_x, 11)
+        rand_x = random.randrange(8, 12)
+        rand_y = random.randrange(8, 12)
 
         rand_x = rand_x * 21 + 10
         rand_y = rand_y * 21 + 10
@@ -34,11 +28,13 @@ class Main(object):
         black_stones = [[rand_x, rand_y]]
         white_stones = []
 
-        end_check = False
+        end_check = False # ← 최초 실행 시 승리 판정을 False로 하여 진행 가능
+
         while True:
             user_select_x = False
             user_select_y = False
             three_x_three_warning = False
+
             for event in pygame.event.get():
                 if event.type == QUIT:
                     pygame.quit()
@@ -46,7 +42,7 @@ class Main(object):
 
                 LEFT = 1   # ← 왼쪽 버튼에 대한 버튼 인덱스
 
-                # 좌클릭시 놓아지는 부분(수정X)
+                # 좌클릭시 놓아지는 부분
                 if event.type == MOUSEBUTTONUP and event.button == LEFT:
                     mouse_xy = pygame.mouse.get_pos()
                     x = (mouse_xy[0] - 10) // 21
@@ -54,7 +50,7 @@ class Main(object):
                     user_select_x = y
                     user_select_y = x
 
-                # 커서가 안내하는 부분(수정X)
+                # 커서가 안내하는 부분
                 elif event.type == MOUSEMOTION:
                     mouse_xy = pygame.mouse.get_pos()
                     x = (mouse_xy[0] - 10) // 21
@@ -70,7 +66,7 @@ class Main(object):
                 board.put_stone(x, y, 11)
                 black_stones.append([gui_x,gui_y])
                 if rule.win_check(x, y, board, 11):
-                    end_check = 'black'
+                    end_check = 'black' # ← AI의 승리
                 count += 1
                 turn = not turn
             else:
@@ -83,7 +79,7 @@ class Main(object):
                             white_stones.append([gui_x, gui_y])
                             board.put_stone(x, y, 10)
                             if rule.win_check(x, y, board, 10):
-                                end_check = 'white'
+                                end_check = 'white' # ← User의 승리
                             count += 1
                             turn = not turn
                         else:
@@ -91,8 +87,8 @@ class Main(object):
 
             # 게임의 상태를 화면에 그려주는 부분 -> 화면을 지우고 업데이트하는 코드
             screen.fill((255, 255, 255)) # ← 공백 RGB 지정
-            screen.blit(pygame.image.load('Image/omok_board.jpg'), (0, 0)) # ← (0, 0)'오목판'IMG 출력
-            screen.blit(pygame.image.load('Image/rule.jpg'), (420, 0)) # ← (420, 0)'룰'IMG 출력
+            screen.blit(pygame.image.load('Image/omok_board.jpg'), (0, 0)) # ← '오목판'IMG 출력
+            screen.blit(pygame.image.load('Image/rule.jpg'), (420, 0)) # ← '룰'IMG 출력
 
             for st in white_stones: # ← 백돌 RGB, SIZE 지정
                 pygame.draw.circle(screen, (250, 250, 250), st, 10)
@@ -107,15 +103,15 @@ class Main(object):
                 pygame.display.update()
                 time.sleep(1) # ← 타이머 1초
 
-            if temp_x <= 420 and temp_y <= 420:
-                pygame.draw.circle(screen, (220, 220, 220),[temp_x,temp_y], 10) # ← 착수 전 백돌 RGB, SIZE 지정
+            if temp_x <= 420 and temp_y <= 420: # ← 마우스의 좌표가 오목 판 내에 있을 때 / 착수 전 백돌 RGB와 SIZE 지정
+                pygame.draw.circle(screen, (220, 220, 220),[temp_x,temp_y], 10)
 
-            if end_check == 'black':
+            if end_check == 'black': # ← 만약 AI의 승리 판정일 때
                 for i in range(5, 0, -1):
                     screen.blit(pygame.image.load('Image/ai'+str(i)+'.jpg'), (465, 55))
                     pygame.display.update()
                     time.sleep(1) # ← 타이머 1초
-            elif end_check == 'white':
+            elif end_check == 'white': # ← 만약 유저의 승리 판정일 때
                 for i in range(5, 0, -1):
                     screen.blit(pygame.image.load('Image/user'+str(i)+'.jpg'),(465, 55))
                     pygame.display.update()
@@ -125,12 +121,14 @@ class Main(object):
 
             if end_check:
                 self.start()
+            '''
+            AI가 승리하면 재시작
+            if end_check == black:
+            self.start()
+            '''
 
 class Board(object):
-    def __init__(self):
-        '''
-        오목판
-        '''
+    def __init__(self): # ← 오목판
         self.omok_board = [[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
@@ -151,28 +149,18 @@ class Board(object):
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9]]
-
+                           
     def put_stone(self, x, y, color):
-        '''
-        오목판에 돌을 둡니다.
-        :param x: int - 오목판 x좌표
-        :param y: int - 오목판 y좌표
-        :param color: int - (x,y) 좌표의 color - 10(백) or 11(흑)
-        :return:
-        '''
+        # 오목판에 돌을 둡니다.
+         # :param x: int - 오목판 x좌표
+         # :param y: int - 오목판 y좌표
+         # :param color: int - (x,y) 좌표의 color - 10(백) or 11(흑)
+         # :return:
         self.omok_board[x][y] = color
 
 class Offset(object):
-    def __init__(self):
-        # 3시부터 시계방향 // 8방향
-        self.offset = [[0, 1],
-                       [1, 1],
-                       [1, 0],
-                       [1, -1],
-                       [0, -1],
-                       [-1, -1],
-                       [-1, 0],
-                       [-1, 1]]
+    def __init__(self): # ← 3시부터 시계 방향으로 8방향
+        self.offset = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
 
 class Rule(Offset):
     def __init__(self):
@@ -292,7 +280,7 @@ class Rule(Offset):
         return False
 
 class AI(Offset):
-    def __init__(self, nick_name,color):
+    def __init__(self, nick_name, color):
         '''
         :param nick_name: string
         :param color: string
@@ -450,9 +438,8 @@ class AI(Offset):
                     four_count += 1
                     if four_count + three_count > 1:
                         weight += 150
-
         return weight
 
 if __name__ == "__main__":
-    main = Main()
-    main.start()
+    Start = Main()
+    Start.start()
