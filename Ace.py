@@ -158,7 +158,6 @@ class Board(object):
     def put_stone(self, x, y, color):
         '''
         오목판에 돌을 둡니다.
-
         :param x: int - 오목판 x좌표
         :param y: int - 오목판 y좌표
         :param color: int - (x,y) 좌표의 color - 10(백) or 11(흑)
@@ -185,7 +184,6 @@ class Rule(Offset):
     def stone_check(self, x, y , board):
         '''
         원래 돌이 있는 자리인지, 좌표값 밖인지 체크합니다.
-
         :param x: int - 확인할 x좌표
         :param y: int - 확인할 y좌표
         :param board: Board - 오목판
@@ -201,7 +199,6 @@ class Rule(Offset):
     def three_x_three_check(self, x, y , board , color):
         '''
         3x3을 체크합니다.
-
         :param x: int - 확인할 x좌표
         :param y: int - 확인할 y좌표
         :param board: Board - 오목판
