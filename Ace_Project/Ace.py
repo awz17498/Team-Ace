@@ -20,7 +20,7 @@ class Main(object):
 
         pygame.init()
 
-        screen = pygame.display.set_mode((1000, 1000)) # ← 프로그램 해상도 설정
+        screen = pygame.display.set_mode((770, 420)) # ← 프로그램 해상도 설정
         pygame.display.set_caption('ACE_오파고') # ← 프로그램 제목 설정
 
         rand_x = random.randrange(8,12)
@@ -92,7 +92,7 @@ class Main(object):
             # 게임의 상태를 화면에 그려주는 부분 -> 화면을 지우고 업데이트하는 코드
             screen.fill((255, 255, 255)) # ← 공백 RGB 지정
             screen.blit(pygame.image.load('Image/omok_board.jpg'), (0, 0)) # ← (0, 0)'오목판'IMG 출력
-            screen.blit(pygame.image.load('Image/rule.jpg'), (440, 0)) # ← (440, 0)'룰'IMG 출력
+            screen.blit(pygame.image.load('Image/rule.jpg'), (420, 0)) # ← (420, 0)'룰'IMG 출력
 
             for st in white_stones: # ← 백돌 RGB, SIZE 지정
                 pygame.draw.circle(screen, (250, 250, 250), st, 10)
@@ -105,7 +105,7 @@ class Main(object):
             if three_x_three_warning: # ← 3x3 경고 트리거
                 screen.blit(pygame.image.load('Image/33.jpg'),(200, 100)) # ← '3x3 경고'IMG 출력
                 pygame.display.update()
-                time.sleep(1)
+                time.sleep(1) # ← 타이머 1초
 
             if temp_x <= 420 and temp_y <= 420:
                 pygame.draw.circle(screen, (220, 220, 220),[temp_x,temp_y], 10) # ← 착수 전 백돌 RGB, SIZE 지정
@@ -114,12 +114,12 @@ class Main(object):
                 for i in range(5, 0, -1):
                     screen.blit(pygame.image.load('Image/ai'+str(i)+'.jpg'), (465, 55))
                     pygame.display.update()
-                    time.sleep(1)
+                    time.sleep(1) # ← 타이머 1초
             elif end_check == 'white':
                 for i in range(5, 0, -1):
                     screen.blit(pygame.image.load('Image/user'+str(i)+'.jpg'),(465, 55))
                     pygame.display.update()
-                    time.sleep(1)
+                    time.sleep(1) # ← 타이머 1초
             else:
                 pygame.display.update()
 
