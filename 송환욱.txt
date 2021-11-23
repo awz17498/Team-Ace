@@ -1,3 +1,8 @@
+＃의문
+1. 좌측, 상단 플레이어만 착수 안되는 문제
+    1-1. 업데이트 부분의 좌표?
+    1-2. 착수가 되어있다고 판단?
+
 ＃image file
 1. 시작 화면 - 400 x 300
     1-1. 시작 버튼 - 180 x 135
@@ -30,6 +35,10 @@ Image 화면에 나타내기
 https://jbmpa.com/pygame/5
 Text를 화면에 표현하기
 https://jbmpa.com/pygame/9
+PyGame - 이벤트 pygame.MOUSEBUTTONUP, pygame.MOUSEBUTTONDOWN
+https://kkamikoon.tistory.com/entry/PyGame-이벤트-pygameMOUSEBUTTONUP-pygameMOUSEBUTTONDOWN
+PyGame - 이벤트 pygame.QUIT
+https://kkamikoon.tistory.com/130
 
 ＃GUI 프로그래밍 공부
  Label, Button, Entry
