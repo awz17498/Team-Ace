@@ -62,8 +62,8 @@
 
 ------------
 ## ScreenShot
-### 게임화면
-![게임화면](https://user-images.githubusercontent.com/89123604/141059724-01156e5d-9e2a-41fd-bcd6-d53b7f3d6d7a.JPG)
+### 실행화면
+![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
 ### 패배화면
 ![최최종 패배](https://user-images.githubusercontent.com/89123613/143179370-b3af6739-595d-4e64-8b77-932bb8e843f9.JPG)
 ### 승리화면
@@ -72,8 +72,7 @@
 ![승리후 순위등록](https://user-images.githubusercontent.com/89123604/141059817-fbe566d5-929e-4fb2-a435-f4bd4c618e12.JPG)
 ### 순위화면
 ![랭킹 최종](https://user-images.githubusercontent.com/89123613/143179355-5aad8886-dcfb-4e8b-bd62-77642749e66b.JPG)
-### 실행화면
-![omok](https://user-images.githubusercontent.com/48282708/71707199-feb57e00-2e2b-11ea-9257-977c33195025.png)
+
 
 ------------
 ## Memo
