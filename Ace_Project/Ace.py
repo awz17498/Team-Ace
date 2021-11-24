@@ -186,8 +186,14 @@ class Rule(Offset):
         :return: bool - 둘 수 없으면 False, 둘 수 있으면 True
         '''
         if x < 0 or x >= len(board.omok_board) or y < 0 or y >= len(board.omok_board):
+            # x가 0보다 작을 때
+            # x가 len(board.omok_board)요소의 전체 개수보다 크거나 같을 때
+            # y가 0보다 작을 때
+            # y가 len(board.omok_board)요소의 전체 개수보다 크거나 같을 때
             return False
         elif board.omok_board[x][y] == 11 or board.omok_board[x][y] == 10:
+            # 11(흑)
+            # 10(백)
             return False
         else:
             return True
