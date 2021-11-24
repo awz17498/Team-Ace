@@ -1,16 +1,15 @@
 # Team : Ace
-이름 | 역할
---- | --- |
-김동현 | Leader |
-서숭용 | Programming(DB) |
-허찬 | Programming(GUI) |
-송환욱 | Programming(AI) |
-박종광 | Planning |
-문아영 | Planning |
-김동현 | Planning |
-강민기 | Assistance |
-김하민 | Assistance |
-유태우 | Assistance |
+번호 | 이름 | 역할 | 비고 |
+--- | --- | --- | --- |
+1 | 서숭용 | Programming(DB) | - |
+2 | 허찬 | Programming(pygame) | - |
+3 | 송환욱 | Programming(AI) | - |
+4 | 박종광 | Planning | - |
+5 | 문아영 | Planning | - |
+6 | 김동현 | Planning | Leader |
+7 | 강민기 | Assistance | - |
+8 | 김하민 | Assistance | - |
+9 | 유태우 | Assistance | - |
 
 # Project : 오파고
 #### 기획 내용
