@@ -8,24 +8,28 @@ from pygame.locals import *
 temp_x = 0
 temp_y = 0
 
+
+
 class Main(object):
     def start(self):
         global temp_x
         global temp_y
+        
         '''
         오목 게임을 시작하고 진행합니다.
         한 게임이 끝나면 5초 뒤 다시 새로운 게임이 시작됩니다.
         :return:
         '''
         board = Board()
-        ai = AI('AI', '○')
+        ai = AI('HEO', 'black')
         rule = Rule()
         turn = True  # AI 차례 : False , user 차례 : True
         count = 1
-
+        
+        
         pygame.init()
 
-        screen = pygame.display.set_mode((800, 440)) # 프로그램 해상도
+        screen = pygame.display.set_mode((770, 420)) # 프로그램 해상도
         pygame.display.set_caption('ACE_오파고') # 프로그램 제목
 
         rand_x = random.randrange(8,12)
@@ -40,6 +44,7 @@ class Main(object):
         white_stones = []
 
         end_check = False
+        
         while True:
             user_select_x = False
             user_select_y = False
@@ -53,8 +58,14 @@ class Main(object):
 
                 if event.type == MOUSEBUTTONUP and event.button == LEFT:
                     mouse_xy = pygame.mouse.get_pos()
-                    x = (mouse_xy[0] - 10) // 21
-                    y = (mouse_xy[1] - 10) // 21
+                    '''
+                    pygame.mouse.get_pos()
+                    마우스의 포지션 x, y 값을 튜플로 반환한다.
+                    pygame.mouse.get_pos() -> (123, 345)
+                    '''
+                    print(pygame.mouse.get_pos())
+                    x = (mouse_xy[0] - 10) // 21 ## 0은 줄 10 = 바둑판의 열 21 = 바둑 알
+                    y = (mouse_xy[1] - 10) // 21 
                     user_select_x = y
                     user_select_y = x
 
@@ -115,7 +126,7 @@ class Main(object):
 
             if end_check == 'black':
                 for i in range(5, 0, -1):
-                    screen.blit(pygame.image.load('Image/ai'+str(i)+'.jpg'), (465, 55))
+                    screen.blit(pygame.image.load('Image/LOSE_ACE'+'.png'), (465, 55))
                     pygame.display.update()
                     time.sleep(1)
             elif end_check == 'white':
@@ -135,20 +146,20 @@ class Board(object):
         오목판
         '''
         self.omok_board = [[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
+                           [4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
@@ -291,7 +302,7 @@ class Rule(Offset):
                 return True
 
         return False
-
+    
 class AI(Offset):
     def __init__(self, nick_name,color):
         '''
@@ -319,12 +330,13 @@ class AI(Offset):
         ai_max_weight = 0
         user_max_weight = 0
         max_weight = 0
+        
 
         for i in range(20):
             for j in range(20):
                 ai_weight = self.analysis_pattern(i,j,board,11)
                 user_weight = self.analysis_pattern(i,j,board,10)
-
+                
                 if ai_weight >= 10000:
                     return i,j
                 elif user_weight >= 10000 and ai_weight != -1:
@@ -340,11 +352,12 @@ class AI(Offset):
 
                 if user_max_weight < user_weight:
                     user_max_weight = user_weight
-
+        
         if ai_max_weight >= user_max_weight:
             return ai_xy
         else:
             return max_xy
+        
 
     def analysis_pattern(self, x, y , board , color):
         '''
@@ -368,7 +381,7 @@ class AI(Offset):
         four_8 = ['10111','11011','11101']
         four_10 = ['11110','01111']
         four_50 =  '011110'
-
+        
         weight = 0
         three_count = 0
         four_count = 0
@@ -376,6 +389,7 @@ class AI(Offset):
         # 양방향으로 체크할것이기 때문에 for문은 4방향.
         for i in range(4):
             check_pattern = '1'
+            
             x_check = x
             y_check = y
             for j in range(4):
@@ -393,6 +407,7 @@ class AI(Offset):
                     check_pattern = '0' + check_pattern
                 else:
                     break
+                
             x_check = x
             y_check = y
             for j in range(4):
@@ -451,8 +466,10 @@ class AI(Offset):
                     four_count += 1
                     if four_count + three_count > 1:
                         weight += 150
-
+                
+        
         return weight
+         
 
 if __name__ == "__main__":
     main = Main()

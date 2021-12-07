@@ -25,7 +25,7 @@ class Main(object):
         rand_y = random.randrange(8, 12) # 8 이상 12 미만의 난수 중 하나를 무작위로 얻음(Y좌표)
         rand_y = rand_y * 21 + 10 # (8 x 21 + 10 = 178), (9 x 21 + 10 = 199), (10 x 21 + 10 = 220), (11 x 21 + 10 = 241) 무작위로 나올 수 있는 난수들을 공식에 대입한 값
 
-        black_stones = [[rand_x, rand_y]]
+        black_stones = [[rand_x, rand_y]]  # 난수가 8 ~ 12 인 이유는 바둑판 20 x 20 의 중앙에서 시작하게끔 설정.
         white_stones = []
 
         end_check = False # 최초 실행 시 승리 판정을 False로 하여 진행 가능
@@ -70,9 +70,9 @@ class Main(object):
             # 게임의 상태를 업데이트하는 부분
             if turn == False: # AI의 턴일 때
                 x, y = ai.select_stone(board)
-                gui_x = y * 21 + 10
-                gui_y = x * 21 + 10
-                board.put_stone(x, y, 11)
+                gui_x = y * 21 + 10  ## 21: 바둑알의 크기 10: 바둑판 라인의 거리
+                gui_y = x * 21 + 10  ## 21: 바둑알의 크기 10: 바둑판 라인의 거리
+                board.put_stone(x, y, 11) ## 11은 black 의 번호. 즉 좌표에 AI가 놓았다는걸 확인
                 black_stones.append([gui_x,gui_y])
                 if rule.win_check(x, y, board, 11):
                     end_check = 'black' # AI의 승리
@@ -81,8 +81,8 @@ class Main(object):
             else:
                 if user_select_x and user_select_y:
                     x, y = user_select_x, user_select_y
-                    gui_x = y * 21 + 10
-                    gui_y = x * 21 + 10
+                    gui_x = y * 21 + 10 ## 21: 바둑알의 크기 10: 바둑판 라인의 거리
+                    gui_y = x * 21 + 10 ## 21: 바둑알의 크기 10: 바둑판 라인의 거리
                     if rule.stone_check(x, y, board):
                         if rule.three_x_three_check(x, y, board, 10):
                             white_stones.append([gui_x, gui_y])
@@ -142,7 +142,7 @@ class Board(object):
         self.omok_board = [[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
-                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
+                           [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],  "그냥 숫자"
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
                            [4,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,6],
