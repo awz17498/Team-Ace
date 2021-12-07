@@ -17,15 +17,15 @@ class Main(object):
         count = 1
         
         temp_x = 0
-        temp_y = 0
-
         rand_x = random.randrange(8, 12) # 8 이상 12 미만의 난수 중 하나를 무작위로 얻음(X좌표)
         rand_x = rand_x * 21 + 10 # (8 x 21 + 10 = 178), (9 x 21 + 10 = 199), (10 x 21 + 10 = 220), (11 x 21 + 10 = 241) 무작위로 나올 수 있는 난수들을 공식에 대입한 값
 
+        temp_y = 0
         rand_y = random.randrange(8, 12) # 8 이상 12 미만의 난수 중 하나를 무작위로 얻음(Y좌표)
         rand_y = rand_y * 21 + 10 # (8 x 21 + 10 = 178), (9 x 21 + 10 = 199), (10 x 21 + 10 = 220), (11 x 21 + 10 = 241) 무작위로 나올 수 있는 난수들을 공식에 대입한 값
 
-        black_stones = [[rand_x, rand_y]]
+        black_stones = [[rand_x, rand_y]] # 난수가 8 ~ 12 인 이유는 바둑판 20 x 20 의 중앙에서 시작하게끔 설정하기 위함
+
         white_stones = []
 
         end_check = False # 최초 실행 시 승리 판정을 False로 하여 진행 가능
@@ -54,21 +54,22 @@ class Main(object):
                     소수점 이하의 수를 모두 버리고 몫만 나타낼 때 ‘//’ 연산자를 사용
                     ''' 
                     print(pygame.mouse.get_pos())
-                    x = (mouse_xy[0] - 10) // 21 # 미해석
-                    y = (mouse_xy[1] - 10) // 21 # 미해석
-                    user_select_x = y # 미해석
-                    user_select_y = x # 미해석
+                    x = (mouse_xy[0] - 10) // 21
+                    y = (mouse_xy[1] - 10) // 21
+                    user_select_x = y
+                    user_select_y = x
 
                 # 커서가 안내하는 부분
                 elif event.type == MOUSEMOTION: # 마우스가 움직일 때 발생함
                     mouse_xy = pygame.mouse.get_pos()
-                    x = (mouse_xy[0] - 10) // 21 # 미해석
-                    y = (mouse_xy[1] - 10) // 21 # 미해석
-                    temp_x = x * 21 + 10 # 미해석
-                    temp_y = y * 21 + 10 # 미해석
+                    x = (mouse_xy[0] - 10) // 21
+                    y = (mouse_xy[1] - 10) // 21
+                    temp_x = x * 21 + 10
+                    temp_y = y * 21 + 10
 
             # 게임의 상태를 업데이트하는 부분
-            if turn == False: # AI의 턴일 때
+            # AI의 턴일 때
+            if turn == False:
                 x, y = ai.select_stone(board)
                 gui_x = y * 21 + 10
                 gui_y = x * 21 + 10
@@ -79,6 +80,7 @@ class Main(object):
                 count += 1
                 turn = not turn
             else:
+                # User의 턴일 때
                 if user_select_x and user_select_y:
                     x, y = user_select_x, user_select_y
                     gui_x = y * 21 + 10
@@ -169,8 +171,10 @@ class Board(object):
         self.omok_board[x][y] = color
 
 class Offset(object):
-    def __init__(self): # 3시부터 시계 방향으로 8방향
-        self.offset = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
+    def __init__(self): # 8방향
+        self.offset =  [[-1, 1],  [0, 1],  [1, 1], 
+                        [-1, 0],           [1, 0], 
+                        [-1, -1], [0, -1], [1, -1]]
 
 class Rule(Offset):
     def __init__(self):
