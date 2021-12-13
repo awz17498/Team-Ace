@@ -119,7 +119,7 @@ PIP INSTALL PYGAME
 ## 업데이트 내역
 
 * 0.1.0 (21/11/05)
-    * .exe 파일형태의 분할된 class를 main클래스로 병합하여 .exe 형태를 변경 (Consol에서 실행 가능)
+    * .exe 파일형태의 분할된 class를 main클래스로 병합하여 .exe 형태를 변경 (Console 에서 실행 가능)
 * 0.1.1 (21/11/11)
     * 승리, 패배화면 mokup 파일 생성
     * 병합형태에서의 temp x,y 변수 로컬 지정으로 인한 오류 발생 / (개선 : temp변수 글로벌화 지정)
@@ -144,32 +144,17 @@ UnboundLocalError: local variable 'temp_x' referenced before assignment
      
     * 업무 분배파트 재설정
      모든 팀원 오픈소스 Class 별 해석 진행
+
 ###
-*main():random rand range 8~12
+* main():
+```
+Coding - rand_x or rand_y = random.randrange(8,12)
+AI 최초 착수 위치는 rand(x,y)값을 Random.Range 함수를 이용하여 공통 8~12 좌표의 위치 중 임의의 위치에 착수
 
 
 
 ## 정보
+* License : http://github.com/NamHoKi/AI-Omok
 
-이름 – [@트위터 주소](https://twitter.com/dbader_org) – 이메일주소@example.com
 
-XYZ 라이센스를 준수하며 ``LICENSE``에서 자세한 정보를 확인할 수 있습니다.
-
-[https://github.com/yourname/github-link](https://github.com/dbader/)
-
-## 기여 방법
-
-1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
-2. (`git checkout -b feature/fooBar`) 명령어로 새 브랜치를 만드세요.
-3. (`git commit -am 'Add some fooBar'`) 명령어로 커밋하세요.
-4. (`git push origin feature/fooBar`) 명령어로 브랜치에 푸시하세요. 
-5. 풀리퀘스트를 보내주세요.
-
-<!-- Markdown link & img dfn's -->
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/yourname/yourproject/wiki
 
