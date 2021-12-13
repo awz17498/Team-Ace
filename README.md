@@ -147,7 +147,7 @@ UnboundLocalError: local variable 'temp_x' referenced before assignment
 
 ### 오파고 프로젝트 전개
 * main.py에서 파이게임(오목) 시작
-** 최초 시작 시 AI 최초 착수 위치는 rand(x,y)값을 Random.Range 함수를 이용하여 공통 8~12 좌표의 위치 중 임의의 위치에 착수
+    * 최초 시작 시 AI 최초 착수 위치는 rand(x,y)값을 Random.Range 함수를 이용하여 공통 8~12 좌표의 위치 중 임의의 위치에 착수
 ```
 rand_x or rand_y = random.randrange(8,12)
 ```
