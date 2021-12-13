@@ -138,14 +138,16 @@ UnboundLocalError: local variable 'temp_x' referenced before assignment
     * DB 구현화를 위한 MYSQL, SQLITE 개념 학습
 * 0.2.0 (21/11/25)
     * 오목 Game, pygame으로 구동 시작 및 버그 관련 정보 확인
-     - 버그 1. 최상단, 최좌측 Users 착수 불가능 (미해결)
-     - 버그 2. Game 승리 및 패배화면 도출 중 오목판 화면 클릭시 User 착수 현상 발견 (미해결)
+       버그 1. 최상단, 최좌측 Users 착수 불가능 (미해결)
+       버그 2. Game 승리 및 패배화면 도출 중 오목판 화면 클릭시 User 착수 현상 발견 (미해결)
+       버그 3. 승리, 패배화면 이미지 변경시 프로그램 멈춤현상 발생 (해결)
      
-    * 오픈 소스 해석 진행
-     - offset(): 마우스 이동방향 8방향 좌표 확인
-     - 
-* 0.0.1
-    * 작업 진행 중
+    * 업무 분배파트 재설정
+     모든 팀원 오픈소스 Class 별 해석 진행
+###
+*main():random rand range 8~12
+
+
 
 ## 정보
 
