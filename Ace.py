@@ -65,14 +65,14 @@ class Main(object):
                     '''
                     print(pygame.mouse.get_pos())
                     x = (mouse_xy[0] - 10) // 21 ## 0은 줄 10 = 바둑판의 열 21 = 바둑 알
-                    y = (mouse_xy[1] - 10) // 21 
+                    y = (mouse_xy[1] - 10) // 21 ## 0은 줄 10 = 바둑판의 열 21 = 바둑 알
                     user_select_x = y
                     user_select_y = x
 
                 elif event.type == MOUSEMOTION:
                     mouse_xy = pygame.mouse.get_pos()
-                    x = (mouse_xy[0] - 10) // 21
-                    y = (mouse_xy[1] - 10) // 21
+                    x = (mouse_xy[0] - 10) // 21## 0은 줄 10 = 바둑판의 열 21 = 바둑 알
+                    y = (mouse_xy[1] - 10) // 21## 0은 줄 10 = 바둑판의 열 21 = 바둑 알
                     temp_x = x * 21 + 10
                     temp_y = y * 21 + 10
 
