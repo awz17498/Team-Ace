@@ -94,16 +94,21 @@
 
 
 
+
+
+
+
+
 # 2021년 12월 13일 프로젝트 마무리
 
-# 프로젝트명 Team-Ace 오파고
+## 프로젝트명 Team-Ace 오파고
 > AI알고리즘을 활용한 오픈 소스를 통해 pygame으로 오목 게임을 실행합니다.
 
 * DB와 GUI를 활용하여 AI를 구현하여 흑수 (AI)와 백수 (USER)의 오목을 진행하는 형식
 * 기존 3 X 3룰과 승리공식을 통한 CHEAK POINT로 승리 및 패배 결과를 도출
 * 랭킹 시스템 도입 (개발 중 / 미완료)
 
-## 설치 방법
+### 설치 방법
 
 PYTHON3 - PYGAME
 
@@ -116,6 +121,7 @@ PIP INSTALL PYGAME
 * 0.1.0 (21/11/05)
     * .exe 파일형태의 분할된 class를 main클래스로 병합하여 .exe 형태를 변경 (Consol에서 실행 가능)
 * 0.1.1 (21/11/11)
+    * 승리, 패배화면 mokup 파일 생성
     * 병합형태에서의 temp x,y 변수 로컬 지정으로 인한 오류 발생 / (개선 : temp변수 글로벌화 지정)
 ```
 PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project? py main.py
@@ -127,7 +133,6 @@ Traceback (most recent call last):
       if temp_x <= 420 and temp_y <= 420:
 UnboundLocalError: local variable 'temp_x' referenced before assignment
 ```
-    * 승리, 패배화면 mokup 파일 생성
 * 0.1.2 (21/11/18)
     * 기본 GUI 개념 학습 -> PYGAME 연동
     * DB 구현화를 위한 MYSQL, SQLITE 개념 학습
