@@ -19,7 +19,6 @@
   * DB
   * GUI
   * AI
-  * ALGORITHM
   
 #### 앞으로 해야할 일
 * pygame 모듈에 대한 공부[https://kkamikoon.tistory.com/129]
@@ -92,3 +91,78 @@
 
 ## 개선한 점
 ##### 1. 파워쉘 이용시 간혈적 오류발생 (개선완료) - 게임시작시 변수인 teep_x, teep_y의 값을 초기화시키는 코딩 입력
+
+
+
+# 2021년 12월 13일 프로젝트 마무리
+
+# 프로젝트명 Team-Ace 오파고
+> AI알고리즘을 활용한 오픈 소스를 통해 pygame으로 오목 게임을 실행합니다.
+
+* DB와 GUI를 활용하여 AI를 구현하여 흑수 (AI)와 백수 (USER)의 오목을 진행하는 형식
+* 기존 3 X 3룰과 승리공식을 통한 CHEAK POINT로 승리 및 패배 결과를 도출
+* 랭킹 시스템 도입 (개발 중 / 미완료)
+
+## 설치 방법
+
+PYTHON3 - PYGAME
+
+```sh
+PIP INSTALL PYGAME
+```
+
+## 업데이트 내역
+
+* 0.1.0 (21/11/05)
+    * .exe 파일형태의 분할된 class를 main클래스로 병합하여 .exe 형태를 변경 (Consol에서 실행 가능)
+* 0.1.1 (21/11/11)
+    * 병합형태에서의 temp x,y 변수 로컬 지정으로 인한 오류 발생 / (개선 : temp변수 글로벌화 지정)
+```
+PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project? py main.py
+pygame 2.1.0 (SDL 2.0.16, Python 3.10.0)
+Traceback (most recent call last):
+   File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 137, in <module>
+      main.start()
+   File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 116, in start
+      if temp_x <= 420 and temp_y <= 420:
+UnboundLocalError: local variable 'temp_x' referenced before assignment
+```
+    * 승리, 패배화면 mokup 파일 생성
+* 0.1.2 (21/11/18)
+    * 기본 GUI 개념 학습 -> PYGAME 연동
+    * DB 구현화를 위한 MYSQL, SQLITE 개념 학습
+* 0.2.0 (21/11/25)
+    * 오목 Game, pygame으로 구동 시작 및 버그 관련 정보 확인
+     - 버그 1. 최상단, 최좌측 Users 착수 불가능 (미해결)
+     - 버그 2. Game 승리 및 패배화면 도출 중 오목판 화면 클릭시 User 착수 현상 발견 (미해결)
+     
+    * 오픈 소스 해석 진행
+     - offset(): 마우스 이동방향 8방향 좌표 확인
+     - 
+* 0.0.1
+    * 작업 진행 중
+
+## 정보
+
+이름 – [@트위터 주소](https://twitter.com/dbader_org) – 이메일주소@example.com
+
+XYZ 라이센스를 준수하며 ``LICENSE``에서 자세한 정보를 확인할 수 있습니다.
+
+[https://github.com/yourname/github-link](https://github.com/dbader/)
+
+## 기여 방법
+
+1. (<https://github.com/yourname/yourproject/fork>)을 포크합니다.
+2. (`git checkout -b feature/fooBar`) 명령어로 새 브랜치를 만드세요.
+3. (`git commit -am 'Add some fooBar'`) 명령어로 커밋하세요.
+4. (`git push origin feature/fooBar`) 명령어로 브랜치에 푸시하세요. 
+5. 풀리퀘스트를 보내주세요.
+
+<!-- Markdown link & img dfn's -->
+[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/datadog-metrics
+[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
+[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
+[wiki]: https://github.com/yourname/yourproject/wiki
+
