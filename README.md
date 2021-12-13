@@ -74,14 +74,14 @@
 > * 0.1.3(21/11/11)
 >     * 승리, 패배 화면 Mockup 파일 제작 및 적용
 >     * PowerShell에서 프로그램 이용 시 간헐적 오류였던 병합 형태에서의 temp x, y 변수 로컬 지정으로 인한 오류 발생(개선 방법 : temp_x, teem_y의 값을 글로벌화 시킨 뒤 지정 초기화)
-> ```ps
-> PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project? py main.py
+> ```
+> PS C:\Users\SONG\Desktop\Team-Ace\Ace_Project> py main.py
 > pygame 2.1.0 (SDL 2.0.16, Python 3.10.0)
 > Traceback (most recent call last):
->    File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 137, in <module>
->       main.start()
->    File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 116, in start
->       if temp_x <= 420 and temp_y <= 420:
+>   File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 137, in <module>
+>     main.start()
+>   File "C:\Users\SONG\Desktop\Team-Ace\Ace_Project\main.py", line 116, in start
+>     if temp_x <= 420 and temp_y <= 420:
 > UnboundLocalError: local variable 'temp_x' referenced before assignment
 > ```
 >
